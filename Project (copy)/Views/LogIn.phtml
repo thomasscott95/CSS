@@ -1,0 +1,59 @@
+<?php require('template/header.phtml') ?>
+
+    <h3>Please login or register.</h3>
+
+<!--    -->
+
+    <form name="login" method="POST" action="../LogIn.php">
+        <h4>Login</h4>
+        <div class="form-group row">
+            <label for="username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+
+<!--                //These allow you to enter the username and password you registered with and allows a person to log in.-->
+<!--                //If incorrect it will not allow you to log in, otherwise it will log you in.-->
+                <input type="username" name = "username" class="form-control" id="Username" placeholder="Username">
+                <input type="password" name = "password" class="form-control" id="inputEmail3" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" name="login" value="login" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+    </form>
+
+    <form name="sign-up" method="POST" action="../LogIn.php">
+        <h4>Register</h4>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+
+<!--                //This is a basic form which allows you to put in specific data which is then put into the database.-->
+                <input  name="username" class="form-control" id="inputEmail3" placeholder="Username">
+                <input type="password" name="password" class="form-control" id="inputEmail3" placeholder="Password">
+
+<!--                //The email will only be aloud to be entered if it is a valid email address, if the email has already,-->
+<!--                //then a person cannot use that email and must enter another one.-->
+                <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+                <input  name="postcode" class="form-control" id="inputEmail3" placeholder="Postcode">
+                <input  name="address" class="form-control" id="inputEmail3" placeholder="Address">
+                <input  name="contactNo" class="form-control" id="inputEmail3" placeholder="Contact Number">
+
+<!--                //This echo allows the Random function to be posted to the page in its specific position.-->
+                <?php echo $_SESSION['Random'];?>
+
+<!--                //This box allows you to copy the randomly generated captcha, if done incorrect it will not allow you,-->
+<!--                //to register.-->
+                <input  name="Captcha" class="form-control" id="inputEmail3" placeholder="Please Insert Captcha">
+
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" name="register" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+<?php require('template/footer.phtml') ?>

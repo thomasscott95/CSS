@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/my-style.css" rel="stylesheet">
+
+
+</head>
+
+<body role="document">
+
+<div class="container">
+        <div  class="row">
+            <div id="title" class="col-xs-12">
+                <img src="images/28 small.png" alt="Strike 28" />
+            </div>
+        </div>
+
+
+    <div class="row" id = "myNav">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">Strike 28</a>
+                        </div>
+                        <ul class="nav navbar-nav">
+
+<!--                            //This lists the pages and links them all together.-->
+                            <li><a href="index.php">Home</a></a></li>
+                            <li><a href="browse.php">Browse</a></li>
+                            <li><a href="postAdvert.php">Post Advert</a></li>
+                            <li><a href="Watchlist.php">Watchlist</a></li>
+
+
+<!--                            //This is an if else statement which if session is not = to login_user then it will state that you need to log in.-->
+<!--                            //This will then then go to else if the session is = to login_user then it will give you an option to log out on-->
+<!--                            // the nav banner.-->
+                            <?php
+                            if(!isset($_SESSION['login_user'])){
+                                echo ' <li><a href="LogIn.php">Log In</a></li>';
+                            }
+                            else{
+                                echo ' <li><a href="logout.php">Log out</a></li>';
+
+                            }
+                            ?>
+
+<!--                            //This allows the admin to log in which will bring up a page for the admin, This will only show up if a user who logs,-->
+<!--                            //in is the admin.-->
+<!--                            // The Username for the admin is : stc483-->
+<!--                            // The Password for the admin is : password-->
+                            <?php
+//                            This specific if statement means who ever is in position one of the user table is the admin of the page.
+                            if(isset($_SESSION['login_user']) && $_SESSION['login_user'] == 1 ){
+                                echo ' <li><a href="admin.php">Admin</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+
+
+
+    <div id="content" class="col-xs-12 col-sm-9 col-md-10">
+
+
+

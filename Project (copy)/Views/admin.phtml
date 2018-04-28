@@ -1,0 +1,26 @@
+<?php require('template/header.phtml') ?>
+
+<h3>Admin</h3>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<!--        //This inputs a table into the given page, naming the headings within the thead.-->
+        <table class="table table-hover">
+            <thead>
+            <tr>
+<!--                // This are the heads which was mentioned in previous comment.-->
+                <th>Advert ID</th><th>Advert Title</th><th>Advert Picture</th><th>User Name</th><th>Date Issued</th><th>Remove Advert</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            //This foreach lop allows the lop to go through the advert data set as $advertData, in which we can view after it has went,-->
+<!--            //though the lop it will echo out into each column from left to right filling in all the spaces. All the data comes from the,-->
+<!--            //advert data set/advert data.-->
+            <?php foreach ($view->advertDataSet as  $advertData) {
+                echo '<tr> <td>' . $advertData->getAdvertId() . '</td> <td>' . $advertData->getAdvertTitle() . '</td> <td>' . '<img src="../images/'.$advertData->getAdvertPicture().'" id="watchListImg" />. </td> </td> <td>' . $advertData->getUserName() . '</td> <td>' . $advertData->getUploadDate() . '</td> </td> <td>' . '<a href="admin.php?id=' . $advertData->getAdvertId() . '" type="button" class="btn btn-primary">Delete Advert</a>' . '</td> </tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </form>
+
+<?php require('template/footer.phtml') ?>

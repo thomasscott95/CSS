@@ -1,0 +1,24 @@
+<?php require('template/header.phtml') ?>
+
+    <h3>Welcome to your Watchlist</h3>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Watchlist ID</th><th>Advert Title</th><th>Advert Description</th><th>Advert Picture</th><th>Sellers Email</th><th>Sellers Contact Number</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            //This foreach lop allows the lop to go through the watchlist data set as $watchListData, in which we can view after it has went,-->
+<!--            //though the lop it will echo out into each column from left to right filling in all the spaces. All the data comes from the,-->
+<!--            //watchlist data set/watchlist data.-->
+            <?php foreach ($view->watchListDataSet as  $watchListData) {
+                echo '<tr> <td>' . $watchListData->getWatchlistId() . '</td> <td>' . $watchListData->getAdvertTitle() . '</td>  <td>' . $watchListData->getAdvertDescription() . '</td> <td>' . '<img src="../images/'.$watchListData->getAdvertPicture().'" id="watchListImg" />. </td> </td> <td>' . $watchListData->getUserEmail() . '</td> <td>' . $watchListData->getUserContactNo() . '</td> </tr>';
+            }
+            ?>
+            </tbody>
+        </table>
+    </form>
+
+<?php require('template/footer.phtml') ?>

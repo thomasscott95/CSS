@@ -1,0 +1,64 @@
+/*NAV BAR BLACK: #353535*/
+
+
+#title {
+    margin-top: 12px;
+    background-color: #fff;
+    color: #000;
+
+}
+#menu {
+    border-top: solid 6px #000;
+    background-color: #000;
+    color: #fff;
+    height: 400px;
+}
+
+#menu a {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+#menu a:hover {
+    background-color: #000;
+    color: #ddd;
+    text-decoration:underline;
+    display: block;
+}
+
+#content {
+    background-color: #fff;
+    border-top: solid 6px #000;
+
+}
+
+#footer {
+    margin_top: 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+#browseImg{
+    width: 150px; /* you can use % */
+    height: auto;
+}
+
+#watchListImg{
+    width: 150px; /* you can use % */
+    height: auto;
+}
+
+
+
+/*li a*/
+/*{*/
+    /*float: left;*/
+    /*margin-left:10%;*/
+    /*border: solid;*/
+    /*border-color: #000;*/
+    /*border-radius: 12px;*/
+    /*opacity: 0.8;*/
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);*/
+/*}*/
